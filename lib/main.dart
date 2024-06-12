@@ -5,6 +5,7 @@ import 'package:structure_template/features/daily_news/presentation/bloc/article
 import 'package:structure_template/features/daily_news/presentation/bloc/article/remote/remote_article_event.dart';
 import 'package:structure_template/features/daily_news/presentation/pages/home/daily_news.dart';
 import 'package:structure_template/injection_container.dart';
+
 Future<void> main() async {
   await initializeDependencies();
   runApp(const MyApp());
@@ -19,7 +20,6 @@ class MyApp extends StatelessWidget {
     return BlocProvider<RemoteArticleBloc>(
       create: (context) => sl()..add(const GetArticles()),
       child: MaterialApp(
-       debugShowCheckedModeBanner: false,
         theme: theme(),
         home: const DailyNews(),
       ),
